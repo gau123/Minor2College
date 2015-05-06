@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.ezzylearning.com/services/EmailValidationService.asmx" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.ezzylearning.com/services/EmailValidationService.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.ezzylearning.com/services/EmailValidationService.asmx">
+      <s:element name="ValidateEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidateEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateEmail" />
+  </wsdl:message>
+  <wsdl:message name="ValidateEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateEmailHttpGetIn">
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ValidateEmailHttpPostIn">
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="EmailValidationServiceSoap">
+    <wsdl:operation name="ValidateEmail">
+      <wsdl:input message="tns:ValidateEmailSoapIn" />
+      <wsdl:output message="tns:ValidateEmailSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EmailValidationServiceHttpGet">
+    <wsdl:operation name="ValidateEmail">
+      <wsdl:input message="tns:ValidateEmailHttpGetIn" />
+      <wsdl:output message="tns:ValidateEmailHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EmailValidationServiceHttpPost">
+    <wsdl:operation name="ValidateEmail">
+      <wsdl:input message="tns:ValidateEmailHttpPostIn" />
+      <wsdl:output message="tns:ValidateEmailHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EmailValidationServiceSoap" type="tns:EmailValidationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidateEmail">
+      <soap:operation soapAction="http://www.ezzylearning.com/services/EmailValidationService.asmx/ValidateEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EmailValidationServiceSoap12" type="tns:EmailValidationServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidateEmail">
+      <soap12:operation soapAction="http://www.ezzylearning.com/services/EmailValidationService.asmx/ValidateEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EmailValidationServiceHttpGet" type="tns:EmailValidationServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ValidateEmail">
+      <http:operation location="/ValidateEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EmailValidationServiceHttpPost" type="tns:EmailValidationServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ValidateEmail">
+      <http:operation location="/ValidateEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmailValidationService">
+    <wsdl:port name="EmailValidationServiceSoap" binding="tns:EmailValidationServiceSoap">
+      <soap:address location="http://www.ezzylearning.com/services/EmailValidationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EmailValidationServiceSoap12" binding="tns:EmailValidationServiceSoap12">
+      <soap12:address location="http://www.ezzylearning.com/services/EmailValidationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EmailValidationServiceHttpGet" binding="tns:EmailValidationServiceHttpGet">
+      <http:address location="http://www.ezzylearning.com/services/EmailValidationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EmailValidationServiceHttpPost" binding="tns:EmailValidationServiceHttpPost">
+      <http:address location="http://www.ezzylearning.com/services/EmailValidationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

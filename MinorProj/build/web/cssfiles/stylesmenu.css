@@ -1,0 +1,296 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 21, 2014, 6:14:30 PM
+    Author     : gaurav
+*/
+
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#cssmenu ul li span form input
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#cssmenu {
+    width: 200px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    height: 800px;
+}
+#cssmenu ul ul {
+    display: none;
+}
+.align-right {
+    float: right;
+}
+#cssmenu > ul > li > a {
+    padding: 15px 20px;
+    border-left: 1px solid #939c14;
+    border-right: 1px solid #939c14;
+    border-top: 1px solid #939c14;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+    background: #d3e01d;
+    background: -webkit-linear-gradient(#d3e01d, #bec91a);
+    background: -moz-linear-gradient(#d3e01d, #bec91a);
+    background: -o-linear-gradient(#d3e01d, #bec91a);
+    background: -ms-linear-gradient(#d3e01d, #bec91a);
+    background: linear-gradient(#d3e01d, #bec91a);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+#cssmenu > ul > li > span > form >input{
+    padding: 15px 20px;
+    border-left: 1px solid #939c14;
+    border-right: 1px solid #939c14;
+    border-top: 1px solid #939c14;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+    background: #d3e01d;
+    background: -webkit-linear-gradient(#d3e01d, #bec91a);
+    background: -moz-linear-gradient(#d3e01d, #bec91a);
+    background: -o-linear-gradient(#d3e01d, #bec91a);
+    background: -ms-linear-gradient(#d3e01d, #bec91a);
+    background: linear-gradient(#d3e01d, #bec91a);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+#cssmenu > ul > li > a:hover,
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li.open > a {
+    color: #eeeeee;
+    background: #bec91a;
+    background: -webkit-linear-gradient(#bec91a, #a8b317);
+    background: -moz-linear-gradient(#bec91a, #a8b317);
+    background: -o-linear-gradient(#bec91a, #a8b317);
+    background: -ms-linear-gradient(#bec91a, #a8b317);
+    background: linear-gradient(#bec91a, #a8b317);
+}
+#cssmenu > ul > li.open > a {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid #939c14;
+}
+#cssmenu > ul > li:last-child > a,
+#cssmenu > ul > li.last > a {
+    border-bottom: 1px solid #939c14;
+}
+#cssmenu > ul > li > span >form >input:hover,
+#cssmenu > ul > li.active > span > form > input,
+#cssmenu > ul > li.open > span > form > input{
+    color: #eeeeee;
+    background: #bec91a;
+    background: -webkit-linear-gradient(#bec91a, #a8b317);
+    background: -moz-linear-gradient(#bec91a, #a8b317);
+    background: -o-linear-gradient(#bec91a, #a8b317);
+    background: -ms-linear-gradient(#bec91a, #a8b317);
+    background: linear-gradient(#bec91a, #a8b317);
+}
+#cssmenu > ul > li.open > span > form > input {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid #939c14;
+}
+#cssmenu > ul > li:last-child > span > form > input,
+#cssmenu > ul > li.last > span > form > input {
+    border-bottom: 1px solid #939c14;
+}
+.holder {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.holder::after,
+.holder::before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 6px;
+    height: 6px;
+    right: 20px;
+    z-index: 10;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.holder::after {
+    top: 17px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+}
+#cssmenu > ul > li > a:hover > span::after,
+#cssmenu > ul > li.active > a > span::after,
+#cssmenu > ul > li.open > a > span::after {
+    border-color: #eeeeee;
+}
+#cssmenu > ul > li >  span::after>input:hover ,
+#cssmenu > ul > li.active > span::after>input,
+#cssmenu > ul > li.open > span::after>input {
+    border-color: #eeeeee;
+}
+.holder::before {
+    top: 18px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-top-color: inherit;
+    border-left-color: inherit;
+}
+#cssmenu ul ul li a {
+    cursor: pointer;
+    border-bottom: 1px solid #32373e;
+    border-left: 1px solid #32373e;
+    border-right: 1px solid #32373e;
+    padding: 10px 20px;
+    z-index: 1;
+    text-decoration: none;
+    font-size: 13px;
+    color: #eeeeee;
+    background: #49505a;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+#cssmenu ul ul li:hover > a,
+#cssmenu ul ul li.open > a,
+#cssmenu ul ul li.active > a {
+    background: #424852;
+    color: #ffffff;
+}
+#cssmenu ul ul li:first-child > a {
+    box-shadow: none;
+}
+#cssmenu ul ul ul li:first-child > a {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+#cssmenu ul ul ul li a {
+    padding-left: 30px;
+}
+#cssmenu > ul > li > ul > li:last-child > a,
+#cssmenu > ul > li > ul > li.last > a {
+    border-bottom: 0;
+}
+#cssmenu > ul > li > ul > li.open:last-child > a,
+#cssmenu > ul > li > ul > li.last.open > a {
+    border-bottom: 1px solid #32373e;
+}
+#cssmenu > ul > li > ul > li.open:last-child > ul > li:last-child > a {
+    border-bottom: 0;
+}
+#cssmenu ul ul li.has-sub > a::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+    right: 20px;
+    z-index: 10;
+    top: 11.5px;
+    border-top: 2px solid #eeeeee;
+    border-left: 2px solid #eeeeee;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+#cssmenu ul ul li.active > a::after,
+#cssmenu ul ul li.open > a::after,
+#cssmenu ul ul li > a:hover::after {
+    border-color: #ffffff;
+}
+
+#cssmenu ul ul li span input {
+    cursor: pointer;
+    border-bottom: 1px solid #32373e;
+    border-left: 1px solid #32373e;
+    border-right: 1px solid #32373e;
+    padding: 10px 20px;
+    z-index: 1;
+    text-decoration: none;
+    font-size: 13px;
+    color: #eeeeee;
+    background: #49505a;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+#cssmenu ul ul li:hover > span >form> input,
+#cssmenu ul ul li.open > span >form> input,
+#cssmenu ul ul li.active > span >form> input{
+    background: #424852;
+    color: #ffffff;
+}
+#cssmenu ul ul li:first-child > span >form > input{
+    box-shadow: none;
+}
+#cssmenu ul ul ul li:first-child > span > form >input {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+#cssmenu ul ul ul li span  form  input {
+    padding-left: 30px;
+}
+#cssmenu > ul > li > ul > li:last-child > span > form> input,
+#cssmenu > ul > li > ul > li.last > span > form > input {
+    border-bottom: 0;
+}
+#cssmenu > ul > li > ul > li.open:last-child > span > form > input,
+#cssmenu > ul > li > ul > li.last.open > span > form > input {
+    border-bottom: 1px solid #32373e;
+}
+#cssmenu > ul > li > ul > li.open:last-child > ul > li:last-child > span > form > input {
+    border-bottom: 0;
+}
+#cssmenu ul ul li.has-sub > span > form > input::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+    right: 20px;
+    z-index: 10;
+    top: 11.5px;
+    border-top: 2px solid #eeeeee;
+    border-left: 2px solid #eeeeee;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+#cssmenu ul ul li.active > span > form > input::after,
+#cssmenu ul ul li.open > span > form > input::after,
+#cssmenu ul ul li > span > form > input:hover::after {
+    border-color: #ffffff;
+}
+

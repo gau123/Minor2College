@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/CAGRCalc/CAGRService?WSDL" uri="wsdl/localhost_8080/CAGRCalc/CAGRService.wsdl"/>
+    <system systemId="http://localhost:8080/CAGRCalc/CAGRService?xsd=1" uri="wsdl/localhost_8080/CAGRCalc/CAGRService.xsd_1.xsd"/>
+    <system systemId="http://www.ezzylearning.com/services/EmailValidationService.asmx?wsdl" uri="wsdl/www.ezzylearning.com/services/EmailValidationService.asmx.wsdl"/>
+    <system systemId="http://localhost:8080/PhoneValidateService/validphnoService?WSDL" uri="wsdl/localhost_8080/PhoneValidateService/validphnoService.wsdl"/>
+    <system systemId="http://localhost:8080/PhoneValidateService/validphnoService?xsd=1" uri="wsdl/localhost_8080/PhoneValidateService/validphnoService.xsd_1.xsd"/>
+</catalog>
